@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enem Assistivo</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<body class="min-vh-100 bg-light d-flex flex-column">
+  <header class="mt-3 container d-flex align-items-center">
+    <img src="img/ifrs.png" class="img-fluid w-25" alt="Logotipo do Instituto Federal do Rio Grande do Sul (IFRS)" />
+    <h1 class="flex-fill text-center">ENEM ASSISTIVO</h1>
+    <button id="ajuda" type="button" class="w-25 btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#menuAjuda">Ajuda</button>
+  </header>
+  <hr />
+  <main class="container flex-grow-1 d-flex flex-column justify-content-center">
+    <h2>Buscar questões do Enem</h2>
+    <p class="lead">Use as entradas de texto abaixo para filtrar seu resultado.</p>
+    <section class="row mb-3">
+      <article class="col">
+        <label for="buscarAno" class="form-label">Buscar questões por ano da prova:</label>
+        <select name="ano" form="buscar" class="form-select" id="buscarAno">
+          <option value="">Todos os anos</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <!-- <option value="2020">2020</option> -->
+          <!-- <option value="2021">2021</option> -->
+          <!-- <option value="2022">2022</option> -->
+        </select>
+      </article>
+      <article class="col">
+        <label for="buscarArea" class="form-label">Buscar questões por área de conhecimento:</label>
+        <select name="area" form="buscar" class="form-select" id="buscarArea">
+          <option value="">Todas as áreas</option>
+          <!-- <option value="Linguagens, Códigos e suas Tecnologias">Linguagens, Códigos e suas Tecnologias</option> -->
+          <!-- <option value="Ciências Humanas e suas Tecnologias">Ciências Humanas e suas Tecnologias</option> -->
+          <!-- <option value="Ciências da Natureza e suas Tecnologias">Ciências da Natureza e suas Tecnologias</option> -->
+          <option value="Matemática e suas Tecnologias">Matemática e suas Tecnologias</option>
+        </select>
+      </article>
+    </section>
+    <section class="row mb-3">
+      <article class="col">
+        <label for="buscarMateria" class="form-label">Buscar questões por matéria:</label>
+        <input name="materia" form="buscar" class="form-control" list="questoesMateria" id="buscarMateria" placeholder="Exemplo: Português, Matemática, Biologia..." disabled />
+        <datalist id="questoesMateria">
+          <option value="Matemática"></option>
+        </datalist>
+      </article>
+      <article class="col">
+        <label for="buscarConteudo" class="form-label">Buscar questões por conteúdo:</label>
+        <input name="conteudo" form="buscar" class="form-control" list="questoesConteudo" id="buscarConteudo" placeholder="Exemplo: Gramática, Geometria, Corpo humano..." disabled />
+        <datalist id="questoesConteudo"></datalist>
+      </article>
+    </section>
+    <section class="text-end">
+      <form id="buscar" method="get" action="prova.html#titulo">
+        <button type="reset" class="btn btn-secondary">Limpar filtros</button>
+        <button type="submit" class="btn btn-primary">Buscar questões</button>
+      </form>
+    </section>
+  </main>
+  <div class="modal" id="menuAjuda" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="descricaoMenu">Menu de ajuda</h1>
+        </div>
+        <div class="modal-body">
+          <h2 class="fs-5">Controles:</h2>
+          <ul>
+            <li>Use <kbd>&uarr;</kbd>, <kbd>&darr;</kbd>, <kbd>&larr;</kbd> e <kbd>&rarr;</kbd> para navegar nos elementos da página.</li>
+            <li>Use <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para interagir com botões e formulários.</li>
+            <li>Use <kbd>h</kbd> para pular para o próximo cabeçalho e <kbd>Shift</kbd> + <kbd>h</kbd> para voltar ao cabeçalho anterior.</li>
+            <li>Use <kbd>b</kbd> para pular para o próximo botão e <kbd>Shift</kbd> + <kbd>b</kbd> para voltar ao botão anterior.</li>
+            <li>Use <kbd>f</kbd> para pular para o próximo formulário e <kbd>Shift</kbd> + <kbd>f</kbd> para voltar ao formulário anterior.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

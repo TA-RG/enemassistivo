@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enem Assistivo</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/prova.js" type="module"></script>
+</head>
+
+<body class="min-vh-100 bg-light d-flex flex-column">
+  <header class="mt-3 container d-flex align-items-center">
+    <img src="img/ifrs.png" class="img-fluid w-25" alt="Logotipo do Instituto Federal do Rio Grande do Sul (IFRS)" />
+    <h1 class="flex-fill text-center">ENEM ASSISTIVO</h1>
+    <button id="ajuda" type="button" class="w-25 btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#menuAjuda">Ajuda</button>
+  </header>
+  <hr />
+  <main class="container flex-grow-1">
+    <div class="d-flex flex-row-reverse align-items-center justify-content-between">
+      <a role="button" class="btn btn-dark" href="index.html">Nova pesquisa</a>
+      <h2 id="titulo">Enem <span id="ano"></span>, questão <span id="questao"></span></h2>
+    </div>
+    <p class="lead"><span id="area"></span></p>
+    <section class="materia conteudo mb-3"></section>
+    <section class="mb-3">
+      <h3>Enunciados</h3>
+      <article id="enunciados"></article>
+    </section>
+    <section class="mb-3">
+      <h3>Alternativas</h3>
+      <article id="alternativas"></article>
+      <article>
+        <form id="resposta" class="d-inline">
+          <button id="enviar" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#enviarResposta">Enviar resposta</button>
+        </form>
+        <a id="anterior" role="button" class="btn btn-warning" href="#titulo">Questão anterior</a>
+        <a id="proxima" role="button" class="btn btn-primary" href="#titulo">Próxima questão</a>
+      </article>
+    </section>
+  </main>
+  <div class="modal" id="menuAjuda" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="descricaoMenu">Menu de ajuda</h1>
+        </div>
+        <div class="modal-body">
+          <h2 class="fs-5">Controles:</h2>
+          <ul>
+            <li>Use <kbd>&uarr;</kbd>, <kbd>&darr;</kbd>, <kbd>&larr;</kbd> e <kbd>&rarr;</kbd> para navegar nos elementos da página.</li>
+            <li>Use <kbd>Enter</kbd> ou <kbd>Espaço</kbd> para interagir com botões e formulários.</li>
+            <li>Use <kbd>h</kbd> para pular para o próximo cabeçalho e <kbd>Shift</kbd> + <kbd>h</kbd> para voltar ao cabeçalho anterior.</li>
+            <li>Use <kbd>b</kbd> para pular para o próximo botão e <kbd>Shift</kbd> + <kbd>b</kbd> para voltar ao botão anterior.</li>
+            <li>Use <kbd>f</kbd> para pular para o próximo formulário e <kbd>Shift</kbd> + <kbd>f</kbd> para voltar ao formulário anterior.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="enviarResposta" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="descricaoResposta"></h1>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="respostaCerta" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="descricaoRespostaCerta"></h1>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
